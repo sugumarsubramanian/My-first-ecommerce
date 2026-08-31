@@ -1,3 +1,26 @@
+# Shopping App
+
+A full-stack e-commerce web app. Users can sign up, log in, browse products by category, view details, and add items to a cart. Admins get a separate dashboard to add/edit products and view registered users. Fully deployed and live on the internet.
+
+**Live app:** https://ecommerce-demo-sugumar-subramanian.vercel.app
+**Backend API:** https://first-ecom-app-backend.onrender.com
+
+## Tools used, and where
+
+- **React** — the whole frontend UI
+- **Redux Toolkit** — app-wide state (logged-in user, cart, product list)
+- **React Router** — page navigation
+- **Tailwind CSS** — styling
+- **Node.js + Express** — the backend API
+- **MongoDB (via MongoDB Atlas)** — the database
+- **Mongoose** — connects Express to MongoDB
+- **JWT** — login sessions / authentication
+- **bcrypt** — encrypts passwords before storing them
+- **Vercel** — hosts the live frontend
+- **Render** — hosts the live backend
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
