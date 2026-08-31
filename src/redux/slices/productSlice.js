@@ -61,11 +61,14 @@ export const fetchProductById = createAsyncThunk(
 
 export const addProduct = createAsyncThunk(
   'products/addProduct',
-  async (productData, { rejectWithValue }) => {
+  async (productData, { rejectWithValue, getState }) => {
     try {
       const response = await fetch(`${API_URL}/products`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${getState().auth.authToken}`,
+        },
         body: JSON.stringify(productData),
       })
       const data = await response.json()
@@ -82,11 +85,14 @@ export const addProduct = createAsyncThunk(
 
 export const updateProduct = createAsyncThunk(
   'products/updateProduct',
-  async ({ id, updates }, { rejectWithValue }) => {
+  async ({ id, updates }, { rejectWithValue, getState }) => {
     try {
       const response = await fetch(`${API_URL}/products/${id}`, {
         method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${getState().auth.authToken}`,
+        },
         body: JSON.stringify(updates),
       })
       const data = await response.json()
